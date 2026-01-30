@@ -3,4 +3,4 @@
 ./gradlew clean
 ./gradlew :viewtooltip:assembleDebug
 ./gradlew :viewtooltip:install
-./gradlew :viewtooltip:bintrayUpload
+# Bintray upload removed – artifacts are now consumed via JitPack tags

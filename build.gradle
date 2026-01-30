@@ -2,20 +2,18 @@ buildscript {
     repositories {
         mavenCentral()
         google()
-        jcenter()
         maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.1.2'
         classpath 'io.fabric.tools:gradle:1.31.2'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        // NOTE: bintray plugin removed – JCenter/Bintray are EOL and break JitPack
     }
 }
 
 allprojects {
     repositories {
-        jcenter()
         google()
         mavenCentral()
         maven { url "https://jitpack.io" }
@@ -25,11 +23,12 @@ allprojects {
 }
 
 ext {
-    COMPILE_SDK=30
-    TARGET_SDK=30
+    COMPILE_SDK = 30
+    TARGET_SDK = 30
     MIN_SDK = 14
     sourceCompatibilityVersion = JavaVersion.VERSION_1_8
     targetCompatibilityVersion = JavaVersion.VERSION_1_8
 
-    libraryVersion = "1.2.3"
+    // This is the library version published via JitPack tags (e.g. v2.0.3)
+    libraryVersion = "2.0.3"
 }
